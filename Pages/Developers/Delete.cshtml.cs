@@ -40,7 +40,7 @@ namespace VideoGameManager.Pages.Developers
             {
                 if (developerToDelete.Games.Any())
                 {
-                    ModelState.AddModelError(string.Empty, "Cannot delete developer with associated games.");
+                    ModelState.AddModelError("", $"Cannot delete {developerToDelete.Name} because they have {developerToDelete.Games.Count} associated games.");
                     Developer = developerToDelete; // Re-populate the Developer property to show details on the page.
                     return Page();
                 }

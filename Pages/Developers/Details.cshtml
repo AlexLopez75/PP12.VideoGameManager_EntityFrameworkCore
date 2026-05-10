@@ -4,17 +4,54 @@
     ViewData["Title"] = "Developer Details";
 }
 
-<h4>Developer's games':</h4>
+<h1>Developer Details</h1>
+
+<div>
+    <h4>Developer Info</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Name</dt>
+        <dd class="col-sm-10">@Model.Developer.Name</dd>
+        
+        <dt class="col-sm-2">Country</dt>
+        <dd class="col-sm-10">@Model.Developer.Country</dd>
+        
+        <dt class="col-sm-2">Founded Year</dt>
+        <dd class="col-sm-10">@Model.Developer.FoundedYear</dd>
+    </dl>
+</div>
+
+<h4 class="mt-4">Developer's games:</h4>
 @if (Model.Developer.Games != null && Model.Developer.Games.Any())
 {
-    <ul>
-        @foreach (var game in Model.Developer.Games)
-        {
-            <li>@game.Title (@game.Year) - Score: @game.Score</li>
-        }
-    </ul>
+    <table class="table table-bordered table-striped mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Year</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var game in Model.Developer.Games)
+            {
+                <tr>
+                    <td>@game.Title</td>
+                    <td>@game.Genre</td>
+                    <td>@game.Year</td>
+                    <td><span class="badge bg-success">@game.Score</span></td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 else
 {
-    <p>This developer has no associated games.</p>
+    <div class="alert alert-info mt-3">This developer has no associated games.</div>
 }
+
+<div class="mt-4">
+    <a asp-page="./Edit" asp-route-id="@Model.Developer?.Id" class="btn btn-primary">Edit</a>
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</div>
