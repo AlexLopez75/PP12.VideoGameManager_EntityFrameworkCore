@@ -1,0 +1,39 @@
+﻿@page
+@model VideoGameManager.Pages.Games.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<hi>Index</hi>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Developer</th>
+            <th>Genre</th>
+            <th>Year</th>
+            <th>Score</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var game in Model.Games)
+        {
+            <tr>
+                <td asp-route-id ="@game.Id">@game.Id</td>
+                <td asp-route-title="@game.Title">@game.Title</td>
+                <td asp-route-developer="@game.Developer">@game.Developer?.Name</td>
+                <td asp-route-genre="@game.Genre">@game.Genre</td>
+                <td asp-route-year="@game.Year">@game.Year</td>
+                <td asp-route-score="@game.Score">@game.Score</td>
+                <td asp-route-description="@game.Description">@game.Description</td>
+                <td colspan="5">
+                    <a asp-page="./Details" asp-route-id="@game.Id" class="btn btn-info btn-sm">Detail</a>
+                    <a asp-page="./Edit" asp-route-id="@game.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@game.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

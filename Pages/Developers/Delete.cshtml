@@ -1,0 +1,43 @@
+﻿@page
+@model VideoGameManager.Pages.Developers.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+<h1>Delete Developer</h1>
+<div>
+    <h4>Are you sure you want to delete this developer?</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Name
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Developer.Name
+        </dd>
+        <dt class="col-sm-2">
+            Country
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Developer.Country
+        </dd>
+        <dt class="col-sm-2">
+            Founded Year
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Developer.FoundedYear
+        </dd>
+        <dt class="col-sm-2">
+            Games
+        </dt>
+        <dd class="col-sm-10">
+            @(Model.Developer.Games?.Count ?? 0)
+        </dd>
+    </dl>
+<form method="post">
+    <input type="hidden" asp-for="Developer.Id" />
+    
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <input type="submit" value="Delete" class="btn btn-danger" /> |
+    <a asp-page="./Index">Back to List</a>
+</form>

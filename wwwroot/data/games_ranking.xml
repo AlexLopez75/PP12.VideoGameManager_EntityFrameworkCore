@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppConfig>
+  <AppTitle>VideoGame Ranking</AppTitle>
+  <Games>
+    <Game>
+      <Id>1</Id>
+      <Title>The Legend of Zelda: TotK</Title>
+      <Genre>Adventure</Genre>
+      <Year>2023</Year>
+      <Score>9.8</Score>
+      <Description>Open-world action RPG</Description>
+    </Game>
+    <Game>
+      <Id>2</Id>
+      <Title>Elden Ring</Title>
+      <Genre>RPG</Genre>
+      <Year>2022</Year>
+      <Score>9.5</Score>
+      <Description>Open-world soulslike</Description>
+    </Game>
+    <Game>
+      <Id>3</Id>
+      <Title>Celeste</Title>
+      <Genre>Platformer</Genre>
+      <Year>2018</Year>
+      <Score>9</Score>
+      <Description>Precision platformer</Description>
+    </Game>
+  </Games>
+</AppConfig>
