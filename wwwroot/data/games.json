@@ -1,0 +1,34 @@
+[
+  {
+    "Id": 1,
+    "Title": "The Legend of Zelda: TotK",
+    "Genre": "Adventure",
+    "Year": 2023,
+    "Score": 9.8,
+    "Description": "Open-world action RPG"
+  },
+  {
+    "Id": 2,
+    "Title": "Elden Ring",
+    "Genre": "RPG",
+    "Year": 2022,
+    "Score": 9.5,
+    "Description": "Open-world soulslike"
+  },
+  {
+    "Id": 3,
+    "Title": "Celeste",
+    "Genre": "Platformer",
+    "Year": 2018,
+    "Score": 9,
+    "Description": "Precision platformer"
+  },
+  {
+    "Id": 4,
+    "Title": "Persona 5",
+    "Genre": "RPG",
+    "Year": 2016,
+    "Score": 8,
+    "Description": "Persona 5"
+  }
+]

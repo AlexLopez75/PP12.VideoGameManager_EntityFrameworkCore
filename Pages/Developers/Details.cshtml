@@ -1,0 +1,20 @@
+﻿@page
+@model VideoGameManager.Pages.Developers.DetailsModel
+@{
+    ViewData["Title"] = "Developer Details";
+}
+
+<h4>Developer's games':</h4>
+@if (Model.Developer.Games != null && Model.Developer.Games.Any())
+{
+    <ul>
+        @foreach (var game in Model.Developer.Games)
+        {
+            <li>@game.Title (@game.Year) - Score: @game.Score</li>
+        }
+    </ul>
+}
+else
+{
+    <p>This developer has no associated games.</p>
+}

@@ -1,0 +1,46 @@
+﻿@page "{id:int}"
+@model VideoGameManager.Pages.Games.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<div>
+    <form method="post">
+        <input type="hidden" asp-for="Game.Id" />
+        <div class="form-group">
+            <label asp-for="Game.Title"></label>
+            <input asp-for="Game.Title" class="form-control" />
+            <span asp-validation-for="Game.Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Game.DeveloperId" class="control-label">Developer</label>
+            <select asp-for="Game.DeveloperId" class="form-control" asp-items="Model.DeveloperList">
+                <option value="">-- Selecciona un Developer --</option>
+            </select>
+            <span asp-validation-for="Game.DeveloperId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Game.Genre"></label>
+            <input asp-for="Game.Genre" class="form-control" />
+            <span asp-validation-for="Game.Genre" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Game.Year"></label>
+            <input asp-for="Game.Year" class="form-control" />
+            <span asp-validation-for="Game.Year" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Game.Score"></label>
+            <input asp-for="Game.Score" class="form-control" />
+            <span asp-validation-for="Game.Score" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Game.Description"></label>
+            <input asp-for="Game.Description" class="form-control" />
+            <span asp-validation-for="Game.Description" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>

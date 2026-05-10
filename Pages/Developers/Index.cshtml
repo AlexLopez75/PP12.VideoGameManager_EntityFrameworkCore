@@ -1,0 +1,33 @@
+﻿@page
+@model VideoGameManager.Pages.Developers.IndexModel
+@{
+    ViewData["Title"] = "Developers";
+}
+
+<h1>Developers</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Founded Year</th>
+            <th>Associated Games</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Developers)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Country</td>
+                <td>@item.FoundedYear</td>
+                <td>@(item.Games?.Count ?? 0)</td>
+                <td>
+                    <a asp-page="./Details" class="btn btn-info btn-sm" asp-route-id="@item.Id">Details</a>
+                    <a asp-page="./Delete" class="btn btn-danger btn-sm" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

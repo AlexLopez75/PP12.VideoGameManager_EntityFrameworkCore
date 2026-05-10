@@ -1,0 +1,16 @@
+﻿@page "{id:int}"
+@model VideoGameManager.Pages.Games.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<div>
+    <p><strong>ID:</strong> @Model.Game.Id</p>
+    <p><strong>Title:</strong> @Model.Game.Title</p>
+    <p><strong>Developer:</strong> @Model.Game.Developer?.Name</p>
+    <p><strong>Genre:</strong> @Model.Game.Genre</p>
+    <p><strong>Year:</strong> @Model.Game.Year</p>
+    <p><strong>Score:</strong> @Model.Game.Score</p>
+    <p><strong>Description:</strong> @Model.Game.Description</p>
+</div>
